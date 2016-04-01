@@ -22,7 +22,7 @@ get_rsearch () {
 	RSEARCH_BIN_SRC="https://s3-us-west-1.amazonaws.com/pani-infrastructure/binaries/manual/rsearch"
 	RSEARCH_BIN_DST="/home/ubuntu/rsearch"
 	RSEARCH_CFG_SRC="https://s3-us-west-1.amazonaws.com/pani-infrastructure/binaries/manual/rsearch.ini"
-	RSEARCH_BIN_DST="/home/ubuntu/rsearch.ini"
+	RSEARCH_CFG_DST="/home/ubuntu/rsearch.ini"
 	wget "$RSEARCH_BIN_SRC" -O $RSEARCH_BIN_DST
 	wget "$RSEARCH_CFG_SRC" -O $RSEARCH_CFG_DST
 	chmod +x $RSEARCH_BIN_DST
