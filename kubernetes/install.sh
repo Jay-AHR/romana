@@ -15,6 +15,17 @@ get_romana_binaries () {
 		wget "$s3_prefix/$s3_bucket/core/latest/origin/$CORE_BRANCH/$bin" -O "/bin/$bin"
 		chmod +x /bin/$bin
 	done
+	get_rsearch || :
+}
+
+get_rsearch () {
+	RSEARCH_BIN_SRC="https://s3-us-west-1.amazonaws.com/pani-infrastructure/binaries/manual/rsearch"
+	RSEARCH_BIN_DST="/home/ubuntu/rsearch"
+	RSEARCH_CFG_SRC="https://s3-us-west-1.amazonaws.com/pani-infrastructure/binaries/manual/rsearch.ini"
+	RSEARCH_BIN_DST="/home/ubuntu/rsearch.ini"
+	wget "RSEARCH_BIN_SRC" -O $RSEARCH_BIN_DST
+	wget "RSEARCH_CFG_SRC" -O $RSEARCH_CFG_SRC
+	chmod +x RSEARCH_BIN_DST
 }
 
 configure_romana () {
