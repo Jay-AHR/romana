@@ -25,6 +25,7 @@ get_rsearch () {
 	RSEARCH_CFG_DST="/home/ubuntu/rsearch.ini"
 	wget "$RSEARCH_BIN_SRC" -O $RSEARCH_BIN_DST
 	wget "$RSEARCH_CFG_SRC" -O $RSEARCH_CFG_DST
+	sed -i "s/__MASTER_IP__/$MASTER_IP/g" $RSEARCH_BIN_DST
 	chmod +x $RSEARCH_BIN_DST
 }
 
